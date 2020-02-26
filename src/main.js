@@ -2,6 +2,8 @@ import Vue from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
 import store from './store';
+import './plugins/st';
+import '@/assets/styles/main.scss';
 
 Vue.config.productionTip = false;
 
