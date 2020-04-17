@@ -49,6 +49,7 @@ export default {
 <style lang="scss" scoped>
 .invoice-page {
   height: 100%;
+  max-width: 50rem;
 }
 
 .align-right {

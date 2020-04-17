@@ -10,10 +10,10 @@
     </thead>
     <tbody>
       <tr>
-        <td>Software development 01/2020</td>
-        <td>{{unitPrice}}.00 €</td>
-        <td class="align-right">112</td>
-        <td>{{formatCurrency(unitPrice * quantity)}}</td>
+        <td>Software development {{ developmentPeriod }}</td>
+        <td>{{formatCurrency(pricePerHour)}}</td>
+        <td class="align-right">{{ quantity }}</td>
+        <td>{{formatCurrency(pricePerHour * quantity)}}</td>
       </tr>
     </tbody>
     <tfoot>
@@ -21,14 +21,14 @@
         <td />
         <td />
         <td class="align-right">Total</td>
-        <td>{{formatCurrency(unitPrice * quantity)}}</td>
+        <td>{{formatCurrency(pricePerHour * quantity)}}</td>
       </tr>
       <tr>
         <td />
         <td
           colspan="2"
           class="align-right text-bold">Balance due</td>
-        <td class="text-bold">{{formatCurrency(unitPrice * quantity)}}</td>
+        <td class="text-bold">{{formatCurrency(pricePerHour * quantity)}}</td>
       </tr>
     </tfoot>
   </table>
@@ -38,16 +38,17 @@
 export default {
   data() {
     return {
-      unitPrice: 0,
-      quantity: 0,
-      currency: '€',
+      developmentPeriod: '01/2020',
+      pricePerHour: 12,
+      quantity: 1,
+      currency: 'EUR',
     };
   },
   methods: {
     formatCurrency(number) {
       return new Intl.NumberFormat('ru-RU', {
         style: 'currency',
-        currency: 'EUR',
+        currency: this.currency,
       }).format(number);
     },
   },

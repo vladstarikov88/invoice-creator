@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <invoice-page />
+    <div class="wrapper">
+      <invoice-page />
+    </div>
   </div>
 </template>
 
@@ -19,5 +21,9 @@ export default {
 #app {
   padding: 4rem;
   height: 100%;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
 }
 </style>
