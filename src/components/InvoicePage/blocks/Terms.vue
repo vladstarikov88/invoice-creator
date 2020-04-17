@@ -3,7 +3,7 @@
     <tbody>
       <tr>
         <th>Number</th>
-        <td>INV0004</td>
+        <td>{{ invoiceNumber }}</td>
       </tr>
       <tr>
         <th>Date</th>
@@ -23,16 +23,24 @@
 
 <script>
 import dayjs from 'dayjs';
+import { mapActions } from 'vuex';
 
 export default {
   data() {
     return {
+      invoiceNumber: '',
       terms: 3,
       todayDate: '',
       dueDate: '',
     };
   },
+  methods: {
+    ...mapActions('global', [
+      'setInvoiceNumber',
+    ]),
+  },
   created() {
+    const invoiceNumber = 4;
     const dateFormat = 'MMM DD, YYYY';
 
     this.todayDate = dayjs()
@@ -40,6 +48,10 @@ export default {
     this.dueDate = dayjs()
       .add(this.terms, 'day')
       .format(dateFormat);
+
+    const repeatValue = 4 - String(invoiceNumber).length;
+    this.invoiceNumber = `INV${'0'.repeat(repeatValue)}${invoiceNumber}`;
+    this.setInvoiceNumber(this.invoiceNumber);
   },
 };
 </script>

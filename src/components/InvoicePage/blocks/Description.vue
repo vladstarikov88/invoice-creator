@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>Software development {{ developmentPeriod }}</td>
+        <td>Software development for {{ developmentPeriod }}</td>
         <td>{{formatCurrency(pricePerHour)}}</td>
         <td class="align-right">{{ quantity }}</td>
         <td>{{formatCurrency(pricePerHour * quantity)}}</td>
@@ -35,14 +35,21 @@
 </template>
 
 <script>
+import dayjs from 'dayjs';
+
 export default {
   data() {
     return {
-      developmentPeriod: '01/2020',
+      developmentPeriod: '',
       pricePerHour: 12,
-      quantity: 1,
+      quantity: 179,
       currency: 'EUR',
     };
+  },
+  created() {
+    this.developmentPeriod = dayjs()
+      .subtract(1, 'month')
+      .format('MM/YYYY');
   },
   methods: {
     formatCurrency(number) {
