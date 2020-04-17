@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import InvoicePage from '@/components/InvoicePage.vue';
+import InvoicePage from '@/components/InvoicePage';
 
 export default {
   name: 'App',
