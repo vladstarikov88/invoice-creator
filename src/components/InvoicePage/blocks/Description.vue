@@ -38,12 +38,23 @@
 import dayjs from 'dayjs';
 
 export default {
+  props: {
+    pricePerHour: {
+      type: Number,
+      default: 0,
+    },
+    quantity: {
+      type: Number,
+      default: 0,
+    },
+    currency: {
+      type: String,
+      default: 'EUR',
+    },
+  },
   data() {
     return {
       developmentPeriod: '',
-      pricePerHour: 12,
-      quantity: 179,
-      currency: 'EUR',
     };
   },
   created() {

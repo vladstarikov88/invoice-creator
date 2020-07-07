@@ -16,9 +16,9 @@
       :height="1"
     />
 
-    <terms />
+    <terms v-bind="$props" />
 
-    <description />
+    <description v-bind="$props" />
 
     <notes />
 
@@ -37,6 +37,28 @@ import Description from './blocks/Description.vue';
 import Notes from './blocks/Notes.vue';
 
 export default {
+  props: {
+    pricePerHour: {
+      type: Number,
+      default: 0,
+    },
+    quantity: {
+      type: Number,
+      default: 0,
+    },
+    currency: {
+      type: String,
+      default: 'EUR',
+    },
+    terms: {
+      type: Number,
+      default: 0,
+    },
+    invoiceNumber: {
+      type: String,
+      default: 'INV0001',
+    },
+  },
   components: {
     Addresses,
     Terms,
