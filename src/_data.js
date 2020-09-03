@@ -1,12 +1,27 @@
+export const fromWhom = {
+  name: 'Vladislav starikov',
+  email: 'vlad.starikov.88@gmail.com',
+  address: `Lenin st. 166, Bataysk,
+Rostov region, Russia 346887`,
+};
+
+export const toWhom = {
+  name: 'Tlusty & Co. s.r.o.',
+  email: 'mail@tlustyco.com',
+  address: `Rybná 716/24, 10100 Praha 10,Česká republika
+Company Registration Number: 06576478
+TAX ID: CZ06576478`,
+};
+
 export const pricePerHour = 12;
 
-export const hoursWorked = 164;
+export const hoursWorked = 116;
 
 export const invoicePeriod = 21;
 
-export const rawInvoiceNumber = 8;
+export const rawInvoiceNumber = 9;
 
-export const developmentPeriod = '07/2020';
+export const developmentPeriod = '08/2020';
 
 export const currencyName = 'EUR';
 
@@ -28,18 +43,3 @@ export const bankAccountDetails = [
     value: 'Vladislav Starikov',
   },
 ];
-
-export const fromWhom = {
-  name: 'Vladislav starikov',
-  email: 'vlad.starikov.88@gmail.com',
-  address: `Lenin st. 166, Bataysk,
-Rostov region, Russia 346887`,
-};
-
-export const toWhom = {
-  name: 'Tlusty & Co. s.r.o.',
-  email: 'mail@tlustyco.com',
-  address: `Rybná 716/24, 10100 Praha 10,Česká republika
-Company Registration Number: 06576478
-TAX ID: CZ06576478`,
-};
