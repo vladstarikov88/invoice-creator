@@ -9,6 +9,7 @@
         :quantity="quantity"
         :terms="terms"
         :invoice-number="preparedInvoiceNumber"
+        :development-period="developmentPeriod"
         :currency="currencyName"
       />
     </div>
@@ -17,8 +18,15 @@
 
 <script>
 import dayjs from 'dayjs';
-
 import InvoicePage from '@/components/InvoicePage';
+import {
+  pricePerHour,
+  quantity,
+  terms,
+  rawInvoiceNumber,
+  developmentPeriod,
+  currencyName,
+} from './_data';
 
 export default {
   name: 'App',
@@ -27,31 +35,36 @@ export default {
   },
   data() {
     return {
-      pricePerHour: 12,
-      quantity: 130,
-      terms: 14,
-      rawInvoiceNumber: 7,
-      currencyName: 'EUR',
+      pricePerHour,
+      quantity,
+      terms,
+      rawInvoiceNumber,
+      developmentPeriod,
+      currencyName,
 
       preparedInvoiceNumber: '',
+      invoiceName: '',
     };
   },
   created() {
-    this.getInvoiceNumber(this.rawInvoiceNumber);
+    this.preparedInvoiceNumber = this.getInvoiceNumber();
+    this.invoiceName = this.getInvoiceName();
+    document.title = this.invoiceName;
   },
   methods: {
-    getInvoiceNumber(invoiceNumber) {
-      const repeatValue = 4 - String(invoiceNumber).length;
-      this.preparedInvoiceNumber = `INV${'0'.repeat(repeatValue)}${invoiceNumber}`;
+    getInvoiceNumber() {
+      const repeatValue = 4 - String(this.rawInvoiceNumber).length;
+      return `INV${'0'.repeat(repeatValue)}${this.rawInvoiceNumber}`;
     },
-    handler() {
-      const periodMonth = dayjs()
-        .subtract(1, 'month')
+    getInvoiceName() {
+      const [month, year] = this.developmentPeriod.split('/');
+      const periodMonth = dayjs(`${year}-${month}-01`)
         .format('MMM')
         .toUpperCase();
 
-      const invoiceName = `${this.preparedInvoiceNumber}-${periodMonth}-Starikov`;
-      document.title = invoiceName;
+      return `${this.preparedInvoiceNumber}-${periodMonth}-Starikov`;
+    },
+    handler() {
       window.print();
     },
   },

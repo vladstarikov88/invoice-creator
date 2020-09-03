@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>Software development for {{ developmentPeriod }}</td>
+        <td>Software development for {{ preparedDevelopmentPeriod }}</td>
         <td>{{formatCurrency(pricePerHour)}}</td>
         <td class="align-right">{{ quantity }}</td>
         <td>{{formatCurrency(pricePerHour * quantity)}}</td>
@@ -51,15 +51,20 @@ export default {
       type: String,
       default: 'EUR',
     },
+    developmentPeriod: {
+      type: String,
+      default: 'EUR',
+    },
   },
   data() {
     return {
-      developmentPeriod: '',
+      preparedDevelopmentPeriod: '',
     };
   },
   created() {
-    this.developmentPeriod = dayjs()
-      .subtract(1, 'month')
+    const [month, year] = this.developmentPeriod.split('/');
+
+    this.preparedDevelopmentPeriod = dayjs(`${year}-${month}-01`)
       .format('MM/YYYY');
   },
   methods: {

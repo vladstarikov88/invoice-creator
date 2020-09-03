@@ -58,6 +58,18 @@ export default {
       type: String,
       default: 'INV0001',
     },
+    developmentPeriod: {
+      type: String,
+      default: '01/1980',
+      validator(value) {
+        const period = value.split('/');
+        const isCorrectMonth = period[0]
+          && parseInt(period[0], 10) >= 1
+          && parseInt(period[0], 10) <= 12;
+        const isCorrectYear = period[1] && period[1].length === 4;
+        return isCorrectMonth && isCorrectYear;
+      },
+    },
   },
   components: {
     Addresses,
