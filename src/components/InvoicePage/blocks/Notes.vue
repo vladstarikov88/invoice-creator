@@ -4,44 +4,28 @@
     <h4 class="notes-header">Money transfer to the account bellow:</h4>
     <table class="notes-table">
       <tbody>
-        <tr>
-          <th>Bank name:</th>
-          <td>Wirecard Bank AG</td>
-        </tr>
-
-        <tr>
-          <th>Bank address:</th>
-          <td>Einsteinring 35 85609 Aschheim, Germany</td>
-        </tr>
-
-        <tr>
-          <th>BIC:</th>
-          <td>WIREDEMM</td>
-        </tr>
-
-        <tr>
-          <th>IBAN:</th>
-          <td>DE26512308006506230144</td>
-        </tr>
-
-        <tr>
-          <th>Bank country:</th>
-          <td>Germany</td>
-        </tr>
-
-        <tr>
-          <th>Beneficiary name:</th>
-          <td>Vladislav Starikov</td>
-        </tr>
-
+        <template
+          v-for="detail in bankAccountDetails"
+        >
+          <tr :key="detail.name">
+            <th>{{detail.name}}</th>
+            <td>{{detail.value}}</td>
+          </tr>
+        </template>
       </tbody>
     </table>
   </div>
 </template>
 
 <script>
-export default {
+import { bankAccountDetails } from '@/_data';
 
+export default {
+  data() {
+    return {
+      bankAccountDetails,
+    };
+  },
 };
 </script>
 

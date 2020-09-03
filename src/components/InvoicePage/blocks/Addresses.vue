@@ -8,35 +8,27 @@
     </thead>
     <tbody>
       <tr>
-        <td class="text-bold">Vladislav starikov</td>
-        <td class="text-bold">Tlusty & Co. s.r.o.</td>
+        <td class="text-bold">{{fromWhom.name}}</td>
+        <td class="text-bold">{{toWhom.name}}</td>
       </tr>
       <tr>
         <td>
-          <a href="mailto:vlad.starikov.88@gmail.com">
-            vlad.starikov.88@gmail.com
+          <a :href="`mailto:${fromWhom.email}`">
+            {{fromWhom.email}}
           </a>
         </td>
         <td>
-          <a href="mailto:mail@tlustyco.com">
-            mail@tlustyco.com
+          <a :href="`mailto:${toWhom.email}`">
+            {{toWhom.email}}
           </a>
         </td>
       </tr>
       <tr>
         <td>
-          Lenin st. 166,
-          Bataysk,
-          Rostov region,
-          Russia 346887
+          <span class="pre">{{fromWhom.address}}</span>
         </td>
         <td>
-          <span>Rybná 716/24, 10100 Praha 10,</span>
-          <span>Česká republika</span>
-          <br>
-          <span>Company Registration Number: 06576478</span>
-          <br>
-          <span>TAX ID: CZ06576478</span>
+          <span class="pre">{{toWhom.address}}</span>
         </td>
       </tr>
     </tbody>
@@ -44,8 +36,15 @@
 </template>
 
 <script>
-export default {
+import { fromWhom, toWhom } from '@/_data';
 
+export default {
+  data() {
+    return {
+      fromWhom,
+      toWhom,
+    };
+  },
 };
 </script>
 
@@ -55,6 +54,7 @@ export default {
     display: flex;
     td, th {
       flex: 1;
+      width: 18rem;
     }
     th {
       font-weight: 300;
@@ -65,6 +65,10 @@ export default {
       line-height: 1.25em;
     }
   }
+}
+
+.pre {
+  white-space: pre;
 }
 
 </style>
