@@ -6,8 +6,8 @@
     <div class="wrapper">
       <invoice-page
         :pricePerHour="pricePerHour"
-        :quantity="quantity"
-        :terms="terms"
+        :quantity="hoursWorked"
+        :terms="invoicePeriod"
         :invoice-number="preparedInvoiceNumber"
         :development-period="developmentPeriod"
         :currency="currencyName"
@@ -21,8 +21,8 @@ import dayjs from 'dayjs';
 import InvoicePage from '@/components/InvoicePage';
 import {
   pricePerHour,
-  quantity,
-  terms,
+  hoursWorked,
+  invoicePeriod,
   rawInvoiceNumber,
   developmentPeriod,
   currencyName,
@@ -36,8 +36,8 @@ export default {
   data() {
     return {
       pricePerHour,
-      quantity,
-      terms,
+      hoursWorked,
+      invoicePeriod,
       rawInvoiceNumber,
       developmentPeriod,
       currencyName,

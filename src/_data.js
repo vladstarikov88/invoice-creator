@@ -1,8 +1,8 @@
 export const pricePerHour = 12;
 
-export const quantity = 130;
+export const hoursWorked = 164;
 
-export const terms = 14;
+export const invoicePeriod = 21;
 
 export const rawInvoiceNumber = 8;
 
@@ -13,23 +13,15 @@ export const currencyName = 'EUR';
 export const bankAccountDetails = [
   {
     name: 'Bank name:',
-    value: 'Wirecard Bank AG',
+    value: 'Tinkoff Bank',
   },
   {
     name: 'Bank address:',
-    value: 'Einsteinring 35 85609 Aschheim, Germany',
+    value: 'Russia, Moscow, 123060, 1st Volokolamskiy proezd, 10, p. 1',
   },
   {
-    name: 'BIC:',
-    value: 'WIREDEMM',
-  },
-  {
-    name: 'IBAN:',
-    value: 'DE26512308006506230144',
-  },
-  {
-    name: 'Bank country:',
-    value: 'Germany',
+    name: 'Card number:',
+    value: '5536 9138 4220 9120',
   },
   {
     name: 'Beneficiary name:',
