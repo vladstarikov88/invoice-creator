@@ -24,6 +24,8 @@
 <script>
 import dayjs from 'dayjs';
 
+import { dateFrom } from '@/_data';
+
 export default {
   props: {
     terms: {
@@ -39,13 +41,14 @@ export default {
     return {
       todayDate: '',
       dueDate: '',
+      dateFrom,
     };
   },
   created() {
     const dateFormat = 'MMM DD, YYYY';
-    this.todayDate = dayjs()
+    this.todayDate = dayjs(dateFrom)
       .format(dateFormat);
-    this.dueDate = dayjs()
+    this.dueDate = dayjs(dateFrom)
       .add(this.terms, 'day')
       .format(dateFormat);
   },

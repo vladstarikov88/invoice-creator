@@ -15,13 +15,15 @@ TAX ID: CZ06576478`,
 
 export const pricePerHour = 12;
 
-export const hoursWorked = 116;
+export const hoursWorked = 153;
 
 export const invoicePeriod = 21;
 
-export const rawInvoiceNumber = 9;
+export const rawInvoiceNumber = 10;
 
-export const developmentPeriod = '08/2020';
+export const developmentPeriod = '09/2020';
+
+export const dateFrom = '2020-10-01';
 
 export const currencyName = 'EUR';
 
