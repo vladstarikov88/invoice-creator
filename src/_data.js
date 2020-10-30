@@ -15,33 +15,61 @@ TAX ID: CZ06576478`,
 
 export const pricePerHour = 12;
 
-export const hoursWorked = 153;
+export const hoursWorked = 116;
 
 export const invoicePeriod = 21;
 
-export const rawInvoiceNumber = 10;
+export const rawInvoiceNumber = 9;
 
-export const developmentPeriod = '09/2020';
+export const developmentPeriod = '08/2020';
 
-export const dateFrom = '2020-10-01';
+export const dateFrom = '2020-10-30';
 
 export const currencyName = 'EUR';
 
 export const bankAccountDetails = [
   {
-    name: 'Bank name:',
-    value: 'Tinkoff Bank',
+    name: 'Account number:',
+    value: '40802978401500008230',
   },
   {
-    name: 'Bank address:',
-    value: 'Russia, Moscow, 123060, 1st Volokolamskiy proezd, 10, p. 1',
+    name: 'SWIFT:',
+    value: 'JSNMRUMMXXX',
   },
   {
-    name: 'Card number:',
-    value: '5536 9138 4220 9120',
+    name: '',
+    value: '',
+    padding: '6px',
   },
   {
-    name: 'Beneficiary name:',
-    value: 'Vladislav Starikov',
+    name: 'Beneficiary customer:',
+    value: 'INDIVIDUAL ENTREPRENEUR Starikov Vladislav Eduardovich',
+  },
+  {
+    name: 'Beneficiary bank:',
+    value: 'BANK OTKRITIE FINANCIAL CORPORATION (PUBLIC JOINT-STOCK COMPANY)',
+  },
+  {
+    name: 'City, country:',
+    value: 'BLD.4 LETNIKOVSKAYA STREET 2, MOSCOW, RUSSIA',
+  },
+];
+
+export const correspondentBanks = [
+  {
+    name: '1. J.P.MORGAN AG:',
+    value: 'SWIFT: CHASDEFX',
+  },
+  {
+    name: '2. COMMERZBANK AG:',
+    value: 'SWIFT: COBADEFF',
+  },
+  {
+    name: '3. DEUTSCHE BANK AG',
+    value: 'SWIFT: DEUTDEFF',
+  },
+  {
+    name: '4. VTB BANK (EUROPE) SE',
+    value: 'SWIFT: OWHBDEFF',
   },
 ];
