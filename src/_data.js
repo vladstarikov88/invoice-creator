@@ -1,7 +1,7 @@
-export const hoursWorked = 135;
-export const rawInvoiceNumber = 13;
-export const developmentPeriod = '12/2020';
-export const dateFrom = '2021-01-13';
+export const hoursWorked = 39.33;
+export const rawInvoiceNumber = 17;
+export const developmentPeriod = '03/2021';
+export const dateFrom = '2021-05-04';
 
 export const fromWhom = {
   name: 'Vladislav starikov',
@@ -20,7 +20,7 @@ TAX ID: CZ06576478`,
 
 export const pricePerHour = 12;
 
-export const invoicePeriod = 21;
+export const invoicePeriod = 14;
 
 export const currencyName = 'EUR';
 

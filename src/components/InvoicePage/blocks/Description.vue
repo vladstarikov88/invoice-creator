@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr>
-        <td>Software development for {{ preparedDevelopmentPeriod }}</td>
+        <td>Software development for {{ preparedDevelopmentPeriod }} - (20 - 30 march)</td>
         <td>{{formatCurrency(pricePerHour)}}</td>
         <td class="align-right">{{ quantity }}</td>
         <td>{{formatCurrency(pricePerHour * quantity)}}</td>
@@ -72,7 +72,7 @@ export default {
       return new Intl.NumberFormat('ru-RU', {
         style: 'currency',
         currency: this.currency,
-      }).format(number);
+      }).format(Math.round(number));
     },
   },
 };
